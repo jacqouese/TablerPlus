@@ -1,0 +1,156 @@
+//color one
+$main: #46666c;
+$bg: #f1f3f6;
+$darkbg: #d4e4e7;
+$lighbg: #f1f1f1;
+
+$lightblack: #646464;
+
+$radius: 10px;
+
+a {
+  text-decoration: none;
+}
+
+.App {
+  height: 100vh;
+  display: flex;
+}
+
+aside {
+  width: 300px;
+  min-width: 300px;
+  height: 100%;
+  padding: 30px 10px;
+  background-color: $bg;
+}
+
+.logo {
+  margin-bottom: 50px;
+  margin-left: 20px;
+}
+
+ul {
+  list-style: none;
+  li {
+    margin-bottom: 10px;
+    padding: 18px 20px;
+    color: $lightblack;
+    border-radius: $radius;
+    cursor: pointer;
+    transition: 0.2s ease-out;
+  }
+  li:hover {
+    color: black;
+  }
+  li#active {
+    color: black;
+    background-color: $darkbg;
+  }
+}
+
+section {
+  padding: 30px 40px;
+  flex-grow: 1;
+}
+
+.subpage-title {
+  margin-bottom: 20px;
+}
+
+.subpage-subtitle {
+  margin: 40px 0 20px 0;
+}
+
+hr.light-hr {
+  border: none;
+  height: 2px;
+  background-color: $bg;
+  width: 100%;
+}
+
+.calendar-body {
+  width: 350px;
+  height: 50px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 20px;
+  padding: 0 10px;
+  background-color: $lighbg;
+  border-radius: $radius;
+}
+
+.calendar-option {
+  height: 85%;
+  width: 150px;
+  min-width: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: inherit;
+  cursor: pointer;
+}
+
+.calendar-option:hover {
+  background-color: rgb(245, 245, 245);
+}
+
+.calendar-option-active {
+  background-color: white;
+}
+
+.calendar-option-active:hover {
+  background-color: white;
+}
+
+.color-picker-box {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.color-picker {
+  width: fit-content;
+  min-width: 240px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 30px;
+  background-color: $lighbg;
+  border-radius: $radius;
+}
+
+input[type="color"] {
+  width: 30px;
+  height: 30px;
+  border: none;
+  cursor: pointer;
+}
+
+table,
+th,
+td {
+  border: 1px solid black;
+}
+
+table {
+  border-collapse: collapse;
+  width: 1200px;
+  height: 300px;
+  table-layout: fixed;
+}
+
+th,
+td {
+  text-align: center;
+}
+
+.top-tr-line {
+  border-bottom: 2px solid black;
+}
+
+th.vertical-line,
+td.vertical-line {
+  border-right: 2px solid black;
+}
