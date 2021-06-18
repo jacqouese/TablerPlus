@@ -30,22 +30,7 @@ function BrTable() {
   elems.forEach(elem => {
     elem.style.backgroundColor = trColor;
   });
-
-  useEffect(() => {
-    if (localStorage.getItem('brygadaa') == null) {
-      localStorage.setItem('brygadaa', NamesA)
-    }
-    if (localStorage.getItem('brygadab') == null) {
-      localStorage.setItem('brygadab', NamesB)
-    }
-    if (localStorage.getItem('brygadac') == null) {
-      localStorage.setItem('brygadac', NamesC)
-    }
-    if (localStorage.getItem('brygadad') == null) {
-      localStorage.setItem('brygadad', NamesD)
-    }
-    
-  }, []);
+  
   return (
     <section>
       <PageTop title={'Tabla brygad'} />
