@@ -6,6 +6,7 @@ import Home from './components/Home';
 import Schedule from './components/Schedule';
 import BrTable from './components/BrTable';
 import { useEffect } from 'react';
+import Topbar from './components/Topbar';
 
 
 function App() {
@@ -29,12 +30,13 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Sidebar />
-        <Switch>
-          <Route path="/" exact component={Home} />
-          <Route path="/schedule" exact component={Schedule} />
-          <Route path="/table" exact component={BrTable} />
-        </Switch>
+        <Topbar />
+          <Sidebar />
+          <Switch>
+            <Route path="/" exact component={Home} />
+            <Route path="/schedule" exact component={Schedule} />
+            <Route path="/table" exact component={BrTable} />
+          </Switch>
       </div>
     </Router>
   );
