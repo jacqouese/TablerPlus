@@ -73,7 +73,6 @@ function ScheduleTable(props) {
 
   return (
     <div className="schedule-table-box">
-      <h3>{props.month} {props.year}</h3>
       <table>
         <tbody>
           <tr className="top-tr">

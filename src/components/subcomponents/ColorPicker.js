@@ -2,7 +2,7 @@
 function ColorPicker(props) {
   return (
     <div className="color-picker">
-      <input onChange={(e) => props.setColor(e.target.value)} type="color"/>
+      <input onChange={(e) => props.setColor(e.target.value)} type="color" value={props.color}/>
       <p style={{paddingBottom: 3}}>{ props.name }</p>
     </div>
   );

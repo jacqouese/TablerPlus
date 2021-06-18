@@ -1,0 +1,14 @@
+directories:
+  output: dist
+  buildResources: assets
+files:
+  - filter:
+      - build/**/*
+extraMetadata:
+  main: build/electron.js
+appId: com. TablerPlus.Tabler
+mac:
+  target: dmg
+  icon: src/img/icon.png
+extends: react-cra
+electronVersion: 13.1.2
