@@ -51,6 +51,7 @@ button:hover {
 .App {
   height: 100vh;
   display: flex;
+  background-color: white;
 }
 
 .top-bar {
@@ -172,7 +173,6 @@ hr.light-hr {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  margin-bottom: 60px;
 }
 
 .color-picker {
@@ -229,6 +229,10 @@ td.vertical-line {
 
 .row-flex-no-gap {
   display: flex;
+}
+
+.table-outline {
+  padding-top: 60px;
 }
 
 .table-column {

@@ -33,13 +33,19 @@ function Schedule() {
   return (
     <section>
       <PageTop title={'Harmonogram'} />
-      <h4 className="subpage-subtitle" >Wybierz miesiąc oraz rok dla harmonogramu</h4>
-      <Calendar setYear={setYear} setMonth={setMonth} year={year} month={month}/>
-      <h4 className="subpage-subtitle" >Dopasuj styl</h4>
-      <div className="color-picker-box">
-        <ColorPicker name={'kolor głowny'} setColor={setDayColor} color={dayColor} />
-        <ColorPicker name={'kolor kolumn'} setColor={setTrColor} color={trColor} />
-        <ColorPicker name={'kolor weekendu'} setColor={setColor} color={color} />
+      <div className="row-flex">
+        <div>
+          <h4 className="subpage-subtitle" >Wybierz miesiąc oraz rok dla harmonogramu</h4>
+          <Calendar setYear={setYear} setMonth={setMonth} year={year} month={month}/>
+        </div>
+        <div>
+          <h4 className="subpage-subtitle" >Dopasuj styl</h4>
+          <div className="color-picker-box">
+            <ColorPicker name={'kolor głowny'} setColor={setDayColor} color={dayColor} />
+            <ColorPicker name={'kolor kolumn'} setColor={setTrColor} color={trColor} />
+            <ColorPicker name={'kolor weekendu'} setColor={setColor} color={color} />
+          </div>
+        </div>
       </div>
       <h4 className="subpage-subtitle" >Podgląd</h4>
       <ScheduleTable year={year} month={month+1} color={color} />
