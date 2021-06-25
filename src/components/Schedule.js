@@ -1,4 +1,7 @@
+import html2canvas from "html2canvas";
+import jsPDF from "jspdf";
 import { useState } from "react";
+import months from "../data/months";
 import Calendar from "./subcomponents/Calendar";
 import ColorPicker from "./subcomponents/ColorPicker";
 import PageTop from "./subcomponents/PageTop";
@@ -30,6 +33,16 @@ function Schedule() {
     elem.style.backgroundColor = trColor;
   });
 
+  const handleClick = () => {
+    html2canvas(document.querySelector('#schedule')).then(canvas => {
+      var imgData = canvas.toDataURL("image/jpeg", 1.0);
+      var pdf = new jsPDF('l', 'px', 'a4');
+
+      pdf.addImage(imgData, 'JPEG', 12, 100, 620, 180);
+      pdf.save("download.pdf");
+    })
+  }
+
   return (
     <section>
       <PageTop title={'Harmonogram'} />
@@ -48,8 +61,11 @@ function Schedule() {
         </div>
       </div>
       <h4 className="subpage-subtitle" >Podgląd</h4>
-      <ScheduleTable year={year} month={month+1} color={color} />
-      <button style={{marginTop: 30}}>Przygotuj PDF</button>
+      <div id="schedule">
+        <h1>{months[month+1]} {year}</h1>
+        <ScheduleTable year={year} month={month+1} color={color} />
+      </div>
+      <button style={{marginTop: 30, marginBottom: 30}} onClick={handleClick} >Przygotuj PDF</button>
     </section>
   );
 }

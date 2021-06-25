@@ -1,4 +1,7 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import html2canvas from 'html2canvas';
+import jsPDF from 'jspdf';
+
 import { NamesA, NamesB, NamesC, NamesD } from "../data/initialNames";
 import Calendar from "./subcomponents/Calendar";
 import ColorPicker from "./subcomponents/ColorPicker";
@@ -30,7 +33,18 @@ function BrTable() {
   elems.forEach(elem => {
     elem.style.backgroundColor = trColor;
   });
-  
+
+
+  const handleClick = () => {
+    html2canvas(document.querySelector('#capture')).then(canvas => {
+      var imgData = canvas.toDataURL("image/jpeg", 1.0);
+      var pdf = new jsPDF('l', 'px', 'a4');
+
+      pdf.addImage(imgData, 'JPEG', 0, 0, 620, 320);
+      pdf.save("download.pdf");
+    })
+  }
+
   return (
     <section>
       <PageTop title={'Tabla brygad'} />
@@ -48,13 +62,13 @@ function BrTable() {
           </div>
         </div>
       </div>
-      <div className="row-flex-no-gap">
+      <div className="row-flex-no-gap" id="capture">
         <Table name={'Brygada A'} names={localStorage.getItem('brygadaa')} />
         <Table name={'Brygada B'} names={localStorage.getItem('brygadab')} />
         <Table name={'Brygada C'} names={localStorage.getItem('brygadac')} />
         <Table name={'Brygada D'} names={localStorage.getItem('brygadad')} />
       </div>
-      <button style={{marginTop: 30}}>Przygotuj PDF</button>
+      <button style={{marginTop: 30, marginBottom: 30}} onClick={handleClick} >Przygotuj PDF</button>
     </section>
   );
 }

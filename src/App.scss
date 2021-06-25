@@ -89,10 +89,11 @@ ul {
   li:hover {
     color: black;
   }
-  li#active {
-    color: black;
-    background-color: $darkbg;
-  }
+}
+
+.active li {
+  color: black;
+  background-color: $darkbg;
 }
 
 section {
@@ -176,20 +177,41 @@ hr.light-hr {
 }
 
 .color-picker {
-  width: fit-content;
-  min-width: 240px;
+  width: 220px;
+  position: relative;
   display: flex;
   align-items: center;
   gap: 10px;
   padding: 10px 30px;
   background-color: $lighbg;
   border-radius: $radius;
+  cursor: pointer;
 }
 
-input[type="color"] {
-  width: 30px;
-  height: 30px;
-  border: none;
+.hidden-colors {
+  width: 100%;
+  height: 100%;
+  background-color: inherit;
+  position: absolute;
+  left: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  border-radius: inherit;
+}
+
+.color-picker:hover .hidden-colors,
+.hidden-colors:hover {
+  display: flex;
+}
+
+.picker {
+  width: 20px;
+  height: 20px;
+  background-color: red;
+  border: 1px solid rgb(129, 129, 129);
+  border-radius: 4px;
   cursor: pointer;
 }
 
@@ -237,7 +259,8 @@ td.vertical-line {
 
 .table-column {
   width: 300px;
-  height: 600px;
+  height: fit-content;
+  padding-bottom: 30px;
   border: 2px solid black;
 }
 
@@ -267,7 +290,16 @@ td.vertical-line {
 }
 
 .table-input {
-  width: 100px;
+  width: 120px;
   border: 1px solid $bg;
   outline: none;
+}
+
+#schedule {
+  width: fit-content;
+  text-align: center;
+  h1 {
+    margin-bottom: 20px;
+    font-weight: 500;
+  }
 }

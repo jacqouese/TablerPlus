@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 function Sidebar() {
   return (
@@ -8,9 +8,9 @@ function Sidebar() {
         </div>
         <div className="menu">
           <ul>
-            <Link to="/"><li id="active">Dom</li></Link>
-            <Link to="/schedule"><li>Harmonogram</li></Link>
-            <Link to="/table"><li>Tabela brygad</li></Link>
+            <NavLink exact to="/" activeClassName="active"><li>Dom</li></NavLink>
+            <NavLink to="/schedule" activeClassName="active"><li>Harmonogram</li></NavLink>
+            <NavLink to="/table" activeClassName="active"><li>Tabela brygad</li></NavLink>
           </ul>
         </div>
     </aside>
