@@ -20,7 +20,7 @@ function BrTable() {
   const [month, setMonth] = useState(currentMonth);
 
   //handle colors of the table
-  const [color, setColor] = useState('#F77070');
+  const [color, setColor] = useState('#FFFFFF');
 
   const [dayColor, setDayColor] = useState('#FFFFFF');
   const dayElems = document.querySelectorAll('th, td.vertical-line, tr:nth-child(2)');
@@ -45,6 +45,14 @@ function BrTable() {
     })
   }
 
+  const colors = [
+    '#ffffff',
+    '#404b5c',
+    '#ff4b5c',
+    '#114b5c',
+    '#4042fc',
+  ];
+
   return (
     <section>
       <PageTop title={'Tabla brygad'} />
@@ -56,9 +64,9 @@ function BrTable() {
         <div>
           <h4 className="subpage-subtitle" >Dopasuj styl</h4>
           <div className="color-picker-box">
-            <ColorPicker name={'kolor głowny'} setColor={setDayColor} color={dayColor} />
-            <ColorPicker name={'kolor kolumn'} setColor={setTrColor} color={trColor} />
-            <ColorPicker name={'kolor weekendu'} setColor={setColor} color={color} />
+            <ColorPicker name={'kolor głowny'} setColor={setDayColor} color={dayColor} colors={colors} />
+            <ColorPicker name={'kolor kolumn'} setColor={setTrColor} color={trColor} colors={colors} />
+            <ColorPicker name={'kolor weekendu'} setColor={setColor} color={color} colors={colors} />
           </div>
         </div>
       </div>
