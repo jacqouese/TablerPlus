@@ -5,16 +5,9 @@ function ColorPicker(props) {
 
   const spans = [];
 
-  const colors = [
-    '#ffffff',
-    '#404b5c',
-    '#ff4b5c',
-    '#114b5c',
-    '#4042fc',
-  ];
-
+  console.log(props.colors)
   //push hidden colors
-  colors.forEach(color => {
+  props.colors.forEach(color => {
     spans.push(<span className="picker" style={{backgroundColor: color}} onClick={() => props.setColor(color)}></span>);
   })
 
