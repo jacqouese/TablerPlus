@@ -1,12 +1,10 @@
-import { useEffect, useRef, useState } from "react";
-import html2canvas from 'html2canvas';
-import jsPDF from 'jspdf';
+import { useState } from "react";
 
-import { NamesA, NamesB, NamesC, NamesD } from "../data/initialNames";
 import Calendar from "./subcomponents/Calendar";
 import ColorPicker from "./subcomponents/ColorPicker";
 import PageTop from "./subcomponents/PageTop";
 import Table from "./subcomponents/Table";
+import { generatePDF } from "../logic/brTableLogic";
 
 
 function BrTable() {
@@ -33,17 +31,6 @@ function BrTable() {
   elems.forEach(elem => {
     elem.style.backgroundColor = trColor;
   });
-
-
-  const handleClick = () => {
-    html2canvas(document.querySelector('#capture')).then(canvas => {
-      var imgData = canvas.toDataURL("image/jpeg", 1.0);
-      var pdf = new jsPDF('l', 'px', 'a4');
-
-      pdf.addImage(imgData, 'JPEG', 0, 0, 620, 320);
-      pdf.save("download.pdf");
-    })
-  }
 
   const colors = [
     '#ffffff',
@@ -76,7 +63,7 @@ function BrTable() {
         <Table name={'Brygada C'} names={localStorage.getItem('brygadac')} />
         <Table name={'Brygada D'} names={localStorage.getItem('brygadad')} />
       </div>
-      <button style={{marginTop: 30, marginBottom: 30}} onClick={handleClick} >Przygotuj PDF</button>
+      <button style={{marginTop: 30, marginBottom: 30}} onClick={() => generatePDF(year, month+1)} >Przygotuj PDF</button>
     </section>
   );
 }

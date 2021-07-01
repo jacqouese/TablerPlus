@@ -33,7 +33,6 @@ function ScheduleTable(props) {
   var tableDay = dayOfTheWeek-1;
   var dayClass = '';
   for (let i = 1; i <= daysInMonth; i++) {
-    
     //start looping from the beginning at the end of the array
     if (tableDay < 7) {
       tableDay++;
@@ -43,7 +42,7 @@ function ScheduleTable(props) {
     }
     
     //assign weekend class if the day is weekend
-    if (tableDay == 6 || tableDay == 7) {
+    if (tableDay == 6 || tableDay == 7 || tableDay == 0) {
       dayClass = {backgroundColor: props.color};
     }
     else {

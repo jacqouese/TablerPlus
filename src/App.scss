@@ -254,7 +254,7 @@ td.vertical-line {
 }
 
 .table-outline {
-  padding-top: 60px;
+  margin-top: 60px;
 }
 
 .table-column {
@@ -302,4 +302,8 @@ td.vertical-line {
     margin-bottom: 20px;
     font-weight: 500;
   }
+}
+
+#capture {
+  height: fit-content;
 }
