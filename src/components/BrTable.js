@@ -1,8 +1,7 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
 
-import { NamesA, NamesB, NamesC, NamesD } from "../data/initialNames";
 import Calendar from "./subcomponents/Calendar";
 import ColorPicker from "./subcomponents/ColorPicker";
 import PageTop from "./subcomponents/PageTop";
@@ -22,11 +21,12 @@ function BrTable() {
   //handle colors of the table
   const [color, setColor] = useState('#FFFFFF');
 
-  const [dayColor, setDayColor] = useState('#FFFFFF');
-  const dayElems = document.querySelectorAll('th, td.vertical-line, tr:nth-child(2)');
-  dayElems.forEach(dayElem => {
-    dayElem.style.backgroundColor = dayColor;
-  });
+  useEffect(() => {
+    const titleBgs = document.querySelectorAll('.table-title');
+    titleBgs.forEach(titleBg => {
+      titleBg.style.backgroundColor = color;
+    });
+  }, [color])
 
   const [trColor, setTrColor] = useState('#FFFFFF');
   const elems = document.querySelectorAll('tr:nth-child(2n+4)');
@@ -47,10 +47,10 @@ function BrTable() {
 
   const colors = [
     '#ffffff',
-    '#404b5c',
-    '#ff4b5c',
-    '#114b5c',
-    '#4042fc',
+    '#e6e6e6',
+    '#b5dee8',
+    '#e8acae',
+    '#c0e8ac',
   ];
 
   return (
@@ -64,9 +64,8 @@ function BrTable() {
         <div>
           <h4 className="subpage-subtitle" >Dopasuj styl</h4>
           <div className="color-picker-box">
-            <ColorPicker name={'kolor głowny'} setColor={setDayColor} color={dayColor} colors={colors} />
+            <ColorPicker name={'kolor głowny'} setColor={setColor} color={color} colors={colors} />
             <ColorPicker name={'kolor kolumn'} setColor={setTrColor} color={trColor} colors={colors} />
-            <ColorPicker name={'kolor weekendu'} setColor={setColor} color={color} colors={colors} />
           </div>
         </div>
       </div>

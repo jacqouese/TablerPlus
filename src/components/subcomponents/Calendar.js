@@ -8,7 +8,7 @@ function Calendar(props) {
     }
     else if (action == 'previous') {
       if (props.year <= 2021) {
-        console.log('enndddd')
+        
       }
       else {
         props.setYear(props.year - 1);
