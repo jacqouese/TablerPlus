@@ -35,7 +35,7 @@ export const generatePDF = (year, month) => {
         pdf.text(180, 30, i+' '+months[month]+' '+year);
         //handle numbers according to team and day
         pdf.setTextColor('red');
-        pdf.text(130, 75, numbers[num1%numbers.length].toString());
+        pdf.text(135, 75, numbers[num1%numbers.length].toString());
         num1++;
         pdf.text(270, 75, numbers[num2%numbers.length].toString());
         num2++;
