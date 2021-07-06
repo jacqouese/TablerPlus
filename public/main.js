@@ -9,21 +9,21 @@ function createWindow () {
   }
 
   const win = new BrowserWindow({
-    width: 1600,
+    width: 1400,
     height: 800,
-    minWidth: 1400,
-    titleBarStyle: 'hidden',
+    minWidth: 1000,
+    minHeight: 400,
+    titleBarStyle: 'hiddenInset',
     frame: display,
     webPreferences: {
-      nodeIntegration: true
+      nodeIntegration: true,
+      devTools: false
     }
   })
 
   //load the index.html from a url
   win.loadURL('http://localhost:3000');
 
-  // Open the DevTools.
-  win.webContents.openDevTools()
 }
 
 // This method will be called when Electron has finished

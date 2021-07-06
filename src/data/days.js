@@ -4,7 +4,7 @@ const days =
     'ndz.',
     'pon.',
     'wt.',
-    'śr.',
+    'sr.',
     'czw.',
     'pt.',
     'sob.',

@@ -55,13 +55,14 @@ function Schedule() {
   });
 
   const handleClick = () => {
-    html2canvas(document.querySelector('#schedule')).then(canvas => {
+    const monthToShow = month+1;
+    html2canvas(document.querySelector('#schedule'), {scrollY: -window.scrollY}).then(function(canvas) {
       var imgData = canvas.toDataURL("image/jpeg", 1.0);
       var pdf = new jsPDF('l', 'px', 'a4');
 
       pdf.addImage(imgData, 'JPEG', 12, 100, 610, 180);
-      pdf.save(year+"_"+month+".pdf");
-    })
+      pdf.save(year+"_"+monthToShow+".pdf");
+    });
   }
 
   return (
@@ -86,7 +87,7 @@ function Schedule() {
         <h1>{months[month+1]} {year}</h1>
         <ScheduleTable year={year} month={month+1} color={color} />
       </div>
-      <button style={{marginTop: 30, marginBottom: 30}} onClick={handleClick} >Przygotuj PDF</button>
+      <button onClick={handleClick} >Przygotuj PDF</button>
     </section>
   );
 }

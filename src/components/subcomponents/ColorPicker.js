@@ -7,7 +7,7 @@ function ColorPicker(props) {
 
   //push hidden colors
   props.colors.forEach(color => {
-    spans.push(<span key={props.colors.indexOf(color)} className="picker" style={{backgroundColor: color}} onClick={() => props.setColor(color)}></span>);
+    spans.push(<span className="picker" style={{backgroundColor: color}} onClick={() => props.setColor(color)}></span>);
   })
 
   const toggleHidden = (color) => {

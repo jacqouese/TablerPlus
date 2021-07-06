@@ -1,20 +1,20 @@
 //returns an array of months in Polish
 const months = 
 [   
-    'grudzień',
-    'styczeń',
+    'grudzien',
+    'styczen',
     'luty',
     'marzec',
-    'kwiecień',
+    'kwiecien',
     'maj',
     'czerwiec',
     'lipiec',
-    'sierpień',
-    'wrzesień',
-    'październik',
+    'sierpien',
+    'wrzesien',
+    'pazdziernik',
     'listopad',
-    'grudzień',
-    'styczeń',
+    'grudzien',
+    'styczen',
 ];
 
 export default months;
