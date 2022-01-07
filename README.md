@@ -2,34 +2,25 @@
 ### Electron application for generating work schedules
 
 
-Custom made program for a certain company. It allows them generate monthly work schedules and tables with employee shifts in PDF format
+Custom made program for a company. TablerPlus is used for generating work schedules in a three-shift format.
 
 ## Features include:
+- Intuitive PDF schedule generation
 - Ability to adjust colors and styles
-- Intuitive editing options
 - Ability to generate any month at any time
 
-## Tech Stack
+## Tech
 
 - PDFs created with jsPDF
 - GUI made in Electron with React
 - Local storage used for storing nonsensitive user data
 
 
-## Installation
+## Installation (MacOS only*)
 
-Navigate to the project directory and install the dependencies
-
-```sh
-npm i
-```
-
-Run Node and Electron
-
-```sh
-npm start
-npm run estart
-```
+1. Go to releases and download the latest version
+2. Run the dmg file (standard MacOS installation)
+##### * Although this is an electron app, it has only been tested and built for MacOS
 
 ## Overview
 
